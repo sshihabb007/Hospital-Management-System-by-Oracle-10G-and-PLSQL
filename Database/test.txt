@@ -1,0 +1,40 @@
+Admin admin = new Admin();
+            admin=ada.getProfile(loginname);
+            nametextBox.Text = admin.Name;
+            contacttextBox.Text = admin.Contact.ToString();
+            adminaddresscomboBox.Items.Clear();
+            adminaddresscomboBox.Text = "";
+            List<string> addresslist = new List<string>();
+            addresslist = rda.addresscombo();
+            foreach (var address in addresslist)
+            {
+                adminaddresscomboBox.Items.Add(address);
+            }
+            adminaddresscomboBox.SelectedItem = admin.Address;
+            dateTimePicker.Text = admin.DateOfBirth.ToString();
+            admintabControl.SelectedTab = profiletab;
+
+
+
+System.NullReferenceException
+  HResult=0x80004003
+  Message=Object reference not set to an instance of an object.
+  Source=HospitalManagementSystem
+  StackTrace:
+   at HospitalManagementSystem.AdminForm.editprofilebutton_Click(Object sender, EventArgs e) in E:\AIUB\Advanced Database Management\ADB Project\HospitalManagementSystem\HospitalManagementSystem\AdminForm.cs:line 192
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   at System.Windows.Forms.Button.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at HospitalManagementSystem.Program.Main() in E:\AIUB\Advanced Database Management\ADB Project\HospitalManagementSystem\HospitalManagementSystem\Program.cs:line 19
